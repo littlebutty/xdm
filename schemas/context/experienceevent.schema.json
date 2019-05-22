@@ -19,13 +19,10 @@
   "definitions": {
     "experienceevent": {
       "properties": {
-        "xdm:groupID": {
-          "title": "ExperienceEvent Group ID",
+        "xdm:correlationID": {
+          "title": "ExperienceEvent Correlation ID",
           "type": "string",
-          "description": "The ID for a group or collection of Experience Events when multiple events need to be tied together or correlated in some fashion.",
-          "items": {
-            "$ref": "https://ns.adobe.com/xdm/context/experienceevent"
-          }
+          "description": "The ID for a group or collection of Experience Events when multiple desperate events need to be tied together or correlated in some fashion."
         }
        }
     }
