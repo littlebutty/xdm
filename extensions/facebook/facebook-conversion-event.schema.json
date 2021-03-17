@@ -8,7 +8,7 @@
   "$id": "https://ns.facebook.com/facebook-event",
   "$schema": "http://json-schema.org/draft-06/schema#",
   "title": "Facebook Conversion Event Mixin",
-  "description": "TODO",
+  "description": "Group of fields used in collecting client-side conversion events for the Facebook platform.",
   "type": "object",
   "meta:extensible": true,
   "meta:intendedToExtend": [
@@ -16,7 +16,9 @@
   ],
   "meta:extends": [
     "https://ns.adobe.com/xdm/context/identitymap",
-    "https://ns.adobe.com/xdm/context/experienceevent-commerce"
+    "https://ns.adobe.com/xdm/context/experienceevent-commerce",
+    "https://ns.adobe.com/xdm/context/aep-web-sdk-experienceevent",
+    "https://ns.adobe.com/xdm/context/experienceevent-search"
   ],
   "meta:tags": {
     "industry": ["all"]
@@ -34,6 +36,11 @@
           "title": "Facebook Conversion Click Id",
           "type": "string",
           "description": "When a user clicks on an ad on Facebook, the link sometimes includes a fbclid query parameter. When the user lands on the target website, if the website has a Facebook pixel that uses first-party cookies, the pixel automatically saves the fbclid query parameter to an _fbc cookie for that website domain. The fbc event parameter value must be of the form version.subdomainIndex.creationTime.fbclid"
+        },
+        "facebook:predicted_ltv": {
+          "title": "Predicted Lifetime Value",
+          "type": "number",
+          "description": "The predicted lifetime value of a conversion event. Example: 432.12."
         }
       }
     },
@@ -42,6 +49,12 @@
     },
     {
       "$ref": "https://ns.adobe.com/xdm/context/experienceevent-commerce"
+    },
+    {
+      "$ref": "https://ns.adobe.com/experience/aep-web-sdk-experienceevent"
+    },
+    {
+      "$ref": "https://ns.adobe.com/experience/experienceevent-search"
     }
   ],
   "meta:status": "experimental"
